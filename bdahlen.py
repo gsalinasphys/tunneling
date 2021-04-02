@@ -49,7 +49,7 @@ class Potential:
     def realmin(self, whichmin):
         return root(nd.Gradient(self.V), whichmin).x
 
-    def cut(self, whichmin, coeff_ang):    #coeff_ang is between 0 and +infty
+    def cut(self, whichmin, coeff_ang):    #cut starts from 'whichmin', coeff_ang is between 0 and +infty
         xcut = np.linspace(-1, whichmin*1.5, 1000)
         real_min = self.realmin([whichmin,1.])
         ycut = -coeff_ang*(xcut - real_min[0]*np.ones_like(xcut)) + real_min[1]
