@@ -21,7 +21,7 @@ if __name__ == '__main__':
     m = Potential(a = 500, nmax = 3, whichmin = 2)
     makePlot(m)
 # %%
-    Vcut = lambda x: m.cut(0.03, x)
+    Vcut = lambda x: m.cut(0.0, x)
     # Vcut = partial(m.cut, 0)
     xplot = np.linspace(-1,3,1000)
     Vplot = Vcut(xplot)
@@ -39,3 +39,4 @@ if __name__ == '__main__':
     s.findAction(pfl)
     print((time.process_time() - start)/60.)
 # %%
+    print("added a line")
